@@ -83,7 +83,7 @@
 	   							<br>
 	   							
 	   							<div style="float: right;">
-									<a href="<c:url value='/MeetingView.do'/>"><input
+									<a href="<c:url value='/MeetingViewBBS.do'/>"><input
 									type="button" class="btn btn-danger" value="자세히 보기" /></a>
 								</div>
 	    					</div>
@@ -112,7 +112,7 @@
 	   							<br>
 	   							
 	   							<div style="float: right;">
-									<a href="<c:url value='/MeetingView.do'/>"><input
+									<a href="<c:url value='/MeetingViewBBS.do'/>"><input
 									type="button" class="btn btn-danger" value="자세히 보기" /></a>
 								</div>
 	    					</div>
@@ -141,7 +141,7 @@
 	   							<br>
 	   							
 	   							<div style="float: right;">
-									<a href="<c:url value='/MeetingView.do'/>"><input
+									<a href="<c:url value='/MeetingViewBBS.do'/>"><input
 									type="button" class="btn btn-danger" value="자세히 보기" /></a>
 								</div>
 	    					</div>
@@ -170,7 +170,7 @@
 	   							<br>
 	   							
 	   							<div style="float: right;">
-									<a href="<c:url value='/MeetingView.do'/>"><input
+									<a href="<c:url value='/MeetingViewBBS.do'/>"><input
 									type="button" class="btn btn-danger" value="자세히 보기" /></a>
 								</div>
 	    					</div>
@@ -199,7 +199,7 @@
 	   							<br>
 	   							
 	   							<div style="float: right;">
-									<a href="<c:url value='/MeetingView.do'/>"><input
+									<a href="<c:url value='/MeetingViewBBS.do'/>"><input
 									type="button" class="btn btn-danger" value="자세히 보기" /></a>
 								</div>
 	    					</div>
@@ -228,7 +228,7 @@
 	   							<br>
 	   							
 	   							<div style="float: right;">
-									<a href="<c:url value='/MeetingView.do'/>"><input
+									<a href="<c:url value='/MeetingViewBBS.do'/>"><input
 									type="button" class="btn btn-danger" value="자세히 보기" /></a>
 								</div>
 	    					</div>

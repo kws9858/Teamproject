@@ -2,6 +2,13 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
+
+
+<title>jQuery UI Datepicker - Display month &amp; year menus</title>
+
+
+
 <nav
 	class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
 	id="ftco-navbar">
@@ -27,7 +34,7 @@
 
 
 
-<section class="hero-wrap" style="background-image: url('images/leesunyoung/bg_1.jpg');" data-stellar-background-ratio="0.5">
+<section class="hero-wrap" style="background-image: url('images/leesunyoung/perform.jpg');" data-stellar-background-ratio="0.5">
    <div class="overlay"></div>
    <div class="container">
      <div class="row no-gutters slider-text align-items-center">
@@ -62,7 +69,7 @@
          </p>
          
          <input type="button" value="공연장 주소" id="search" class="btn btn-primary" />  
-         <input type="button" value="공연 일시" id="search" class="btn btn-primary" />  
+         <p>공연 날짜: <input type="text" id="datepicker"></p>  
          
 
                 
@@ -81,7 +88,7 @@
 		      <div class="position">
 		         <div class="col-md-10">
 					<div class="form-group">
-						<textarea  class="form-control" cols="200" rows="20" placeholder="모임 소개를 입력하세요"></textarea>						
+						<textarea  class="form-control" cols="200" rows="20" placeholder="공연에 대한 소개를 입력하세요"></textarea>						
 					</div>
 				</div>
 		     </div>
@@ -110,6 +117,8 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 <script src="resources/js/google-map.js"></script>
 <script src="resources/js/main.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script>
 
@@ -163,6 +172,16 @@ function() {
 
 	$('#frm').submit();
 });
+
+
+
+
+$( function() {
+  $( "#datepicker" ).datepicker({
+    changeMonth: true,
+    changeYear: true
+  });
+} );
 
 
 </script>
