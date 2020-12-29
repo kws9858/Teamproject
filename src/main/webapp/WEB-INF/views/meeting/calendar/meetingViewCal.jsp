@@ -125,6 +125,7 @@
     
     
     <!-- =======================일정 부분========================= -->
+    <a href="<c:url value='/coding.do'/>">캘린더 coding.jsp 테스트</a>
     <section class="ftco-section">
 			<div class="container">
 				<div class="row justify-content-center" style="margin-top: 50px;">

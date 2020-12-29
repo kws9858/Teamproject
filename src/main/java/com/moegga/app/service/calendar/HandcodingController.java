@@ -31,18 +31,15 @@ import com.google.api.services.calendar.model.CalendarList;
 import com.google.api.services.calendar.model.CalendarListEntry;
 
 
-
-
-
  
 
 @Controller
 
-public class GoogleCalendarController {
+public class HandcodingController {
 
     
 
-    private Logger logger = LoggerFactory.getLogger(GoogleCalendarController.class);
+    private Logger logger = LoggerFactory.getLogger(HandcodingController.class);
 
     
 
@@ -55,7 +52,6 @@ public class GoogleCalendarController {
         logger.info("calendarList");
 
         try {
-
             Calendar service = GoogleCalendarService.getCalendarService();
 
             CalendarList calendarList = service.calendarList().list().setPageToken(null).execute();
@@ -70,7 +66,7 @@ public class GoogleCalendarController {
 
         }
 
-        return "coding";
+        return "/meeting/calendar/coding";
 
     }
 
@@ -80,7 +76,7 @@ public class GoogleCalendarController {
 
     @RequestMapping(value="/calendarAdd.do", method=RequestMethod.POST)
 
-    public String calendarAdd(CalendarDTO calDto) {
+    public String calendarAdd(CalendarDto calDto) {
 
         logger.info("calendarAdd "+calDto.toString());
 
@@ -148,7 +144,7 @@ public class GoogleCalendarController {
 
     @RequestMapping(value="/calendarModify.do", method=RequestMethod.POST)
 
-    public String calendarModify(CalendarDTO calDto) {
+    public String calendarModify(CalendarDto calDto) {
 
         logger.info("calendarModify "+calDto.toString());
 
@@ -188,10 +184,9 @@ public class GoogleCalendarController {
 
         model.addAttribute("title", title);
 
-        return "schdule";
+        return "/meeting/calendar/schdule";
 
     }    
 
 }
-
 

@@ -215,7 +215,8 @@
 			<version>4.2.15.RELEASE</version>
 		</dependency>
 		
-		<!-- google 캘린더 api -->
+		<!-- google api -->
+
         <dependency>
             <groupId>com.google.api-client</groupId>
             <artifactId>google-api-client</artifactId>
@@ -233,7 +234,6 @@
             <artifactId>google-api-services-calendar</artifactId>
             <version>v3-rev235-1.22.0</version>
         </dependency>
-	
 		        
 	</dependencies>
     <build>

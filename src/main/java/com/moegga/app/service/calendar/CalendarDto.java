@@ -1,5 +1,4 @@
 package com.moegga.app.service.calendar;
- 
 
 import java.text.ParseException;
 
@@ -9,7 +8,7 @@ import java.util.Date;
 
  
 
-public class CalendarDTO {
+public class CalendarDto {
 
     
 
@@ -39,7 +38,7 @@ public class CalendarDTO {
 
     
 
-    public CalendarDTO() {}
+    public CalendarDto() {}
 
     
 
@@ -172,5 +171,4 @@ public class CalendarDTO {
     }
 
 }
-
 

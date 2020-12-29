@@ -27,7 +27,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
     
     <!--
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/th
+    emes/base/jquery-ui.css">
 	<link rel="stylesheet" href="/resources/demos/style.css">
 	-->
 
@@ -41,12 +42,12 @@
 	<tiles:insertAttribute name="body"/>
 	
 	<!--플로팅 메뉴 부분 시작-->
-	
+	<!-- 
 	<div style="height:5000px">
 	</div>
 	<div id="floatMenu">
 		<div>
-		모임 채팅
+			모임채팅
 		</div>
 		<div>
 		자유게시판 글쓰기
@@ -54,9 +55,73 @@
 		<div>
 		chatbot
 		</div>
+	
+		<div id="body">  -->
+		
+		<!--============== 플러팅 메뉴 버튼 ==================-->
+		<div id="menu-circle" class="btn btn-raised">
+			<div id="chat-overlay"></div>
+			<i class="material-icons" style="margin-left:-9px">MENU</i>
+		</div>
+		<!--============== 플러팅 메뉴 버튼 끝 ==============-->
+		
+		<!--============== 세부 메뉴 ==============-->
+		<div class="menu">
+			<div class="menu-body">
+				<h6 class="menu-exit pull-right">X</h6><br/>
+				<div id="write-circle" class="btn btn-raised" style="margin-bottom:180px">
+					<div id="chat-overlay"></div>
+					<i class="material-icons" style="margin-left:-10px;">write</i>
+				</div>
+				<div id="chatbot-circle" class="btn btn-raised" style="margin-bottom:90px">
+					<div id="chat-overlay"></div>
+					<a href="<c:url value='/Meeting/Chat.do'/>"><i class="material-icons" style="margin-left:-15px;">chatbot</i></a>
+				</div>
+				<div id="chat-circle" class="btn btn-raised">
+					<div id="chat-overlay"></div>
+					<i class="material-icons" style="margin-left:-15px;">chatting</i>
+				</div>
+			</div>
+		</div>
+		<!--============== 세부 메뉴 끝 ==============-->
+		
+		<!--=============== 채팅방 ===============-->
+		<div class="chat-box">
+			<div class="chat-box-header">
+				<span class="chat-list-toggle" style="float:left;margin-left:20px">
+					<i class="material-icons" style="font-style:normal;font-weight:bold;">《</i>
+				</span>
+				<span class="title">
+					<i class="material-icons">Chatting</i>
+				</span>
+				<span class="chat-box-toggle">
+					<i class="material-icons">X&nbsp;</i>
+				</span>
+			</div>
+			<div class="chat-box-body">
+				<div class="chat-box-overlay"></div>
+				<div class="chat-logs"></div>
+				<!--chat-log -->
+			</div>
+			<div class="chat-input">
+				<form>
+					<input type="text" id="chat-input" placeholder="Send a message..." />
+					<button type="submit" class="chat-submit" id="chat-submit">
+						<i class="material-icons" style="margin-left:-20px">send</i>
+					</button>
+				</form>
+			</div>
+		</div>
+		<!--=============== 채팅방 ===============-->
+		
+		
+	</div>
+	
+	
 	</div>
 	
 	    <script>
+	    	
 			$(document).ready(function() {
 			
 				// 기존 css에서 플로팅 배너 위치(top)값을 가져와 저장한다.
@@ -77,6 +142,124 @@
 					}, 500);
 			
 				}).scroll();
+				
+				
+				/*============================================*/
+				
+				$(function() {
+				  var INDEX = 0; 
+				  $("#chat-submit").click(function(e) {
+				    e.preventDefault();
+				    var msg = $("#chat-input").val(); 
+				    if(msg.trim() == ''){
+				      return false;
+				    }
+				    generate_message(msg, 'self');
+				    var buttons = [
+				        {
+				          name: 'Existing User',
+				          value: 'existing'
+				        },
+				        {
+				          name: 'New User',
+				          value: 'new'
+				        }
+				      ];
+				    setTimeout(function() {      
+				      generate_message(msg, 'user');  
+				    }, 1000)
+				    
+				  })
+				  
+				  function generate_message(msg, type) {
+				    INDEX++;
+				    var str="";
+				    str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg "+type+"\">";
+				    str += "          <span class=\"msg-avatar\">";
+				    str += "            <img src=\" resources/images/image_1.jpg \">";
+				    str += "          <\/span>";
+				    str += "          <div class=\"cm-msg-text\">";
+				    str += msg;
+				    str += "          <\/div>";
+				    str += "        <\/div>";
+				    $(".chat-logs").append(str);
+				    $("#cm-msg-"+INDEX).hide().fadeIn(300);
+				    if(type == 'self'){
+				     $("#chat-input").val(''); 
+				    }    
+				    $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);    
+				  }  
+				  
+				  function generate_button_message(msg, buttons){    
+				    /* Buttons should be object array 
+				      [
+				        {
+				          name: 'Existing User',
+				          value: 'existing'
+				        },
+				        {
+				          name: 'New User',
+				          value: 'new'
+				        }
+				      ]
+				    */
+				    INDEX++;
+				    var btn_obj = buttons.map(function(button) {
+				       return  "              <li class=\"button\"><a href=\"javascript:;\" class=\"btn btn-primary chat-btn\" chat-value=\""+button.value+"\">"+button.name+"<\/a><\/li>";
+				    }).join('');
+				    var str="";
+				    str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg user\">";
+				    str += "          <span class=\"msg-avatar\">";
+				    str += "            <img src=\"https:\/\/image.crisp.im\/avatar\/operator\/196af8cc-f6ad-4ef7-afd1-c45d5231387c\/240\/?1483361727745\">";
+				    str += "          <\/span>";
+				    str += "          <div class=\"cm-msg-text\">";
+				    str += msg;
+				    str += "          <\/div>";
+				    str += "          <div class=\"cm-msg-button\">";
+				    str += "            <ul>";   
+				    str += btn_obj;
+				    str += "            <\/ul>";
+				    str += "          <\/div>";
+				    str += "        <\/div>";
+				    $(".chat-logs").append(str);
+				    $("#cm-msg-"+INDEX).hide().fadeIn(300);   
+				    $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);
+				    $("#chat-input").attr("disabled", true);
+				  }
+				  
+				  $(document).delegate(".chat-btn", "click", function() {
+				    var value = $(this).attr("chat-value");
+				    var name = $(this).html();
+				    $("#chat-input").attr("disabled", false);
+				    generate_message(name, 'self');
+				  })
+				  
+				  $("#menu-circle").click(function() {    
+				    $("#menu-circle").toggle('scale');
+				    $(".menu").toggle('scale');
+				  })
+				  
+				  $(".chat-box-toggle").click(function() {
+				    $(".chat-box").toggle('scale');
+				    $(".menu").toggle('scale');
+				  })
+				  
+				  $("#chat-circle").click(function() {
+				    $(".chat-box").toggle('scale');
+				    $(".menu").toggle('scale');
+				  })
+				 
+				  $(".menu-exit").click(function() {
+				    $(".menu").toggle('scale');
+				    $("#menu-circle").toggle('scale');
+				  })
+				  
+				})
+				
+				/*============================================*/
+				
+				
+				
 			
 			});
 			
@@ -89,6 +272,10 @@
 					console.log('이동 완료하였습니다.');
 				}
 			});
+			
+			
+			  
+			  
 		</script>
 	<!--플로팅 메뉴 부분 끝-->
 	

@@ -37,7 +37,6 @@ import com.google.api.services.calendar.model.EventDateTime;
 import com.google.api.services.calendar.model.Events;
 
 
-
  
 
 @RestController
@@ -54,7 +53,7 @@ public class CalendarAjaxController {
 
     @RequestMapping(value="/calendarEventList.do", method=RequestMethod.POST)
 
-    public List<Event> calendarEventList(CalendarDTO calDto) {
+    public List<Event> calendarEventList(CalendarDto calDto) {
 
         logger.info("calendarEventList "+calDto.toString());
 
@@ -86,7 +85,7 @@ public class CalendarAjaxController {
 
     @RequestMapping(value="/calendarEventAdd.do", method=RequestMethod.POST)
 
-    public Map<String, Boolean> calendarEventAdd(CalendarDTO calDto) {
+    public Map<String, Boolean> calendarEventAdd(CalendarDto calDto) {
 
         logger.info("calendarEventAdd "+calDto.toString());
 
@@ -140,7 +139,7 @@ public class CalendarAjaxController {
 
     @RequestMapping(value="/calendarEventRemoveOne.do", method=RequestMethod.POST)
 
-    public Map<String, Boolean> calendarEventRemoveOne(CalendarDTO calDto) {
+    public Map<String, Boolean> calendarEventRemoveOne(CalendarDto calDto) {
 
         logger.info("calendarEventRemoveOne "+calDto.toString());
 
@@ -176,7 +175,7 @@ public class CalendarAjaxController {
 
     @RequestMapping(value="/calendarEventModify.do", method=RequestMethod.POST)
 
-    public Map<String, Boolean> calendarEventModify(CalendarDTO calDto) {
+    public Map<String, Boolean> calendarEventModify(CalendarDto calDto) {
 
         logger.info("calendarEventModify "+calDto.toString());
 
@@ -211,3 +210,4 @@ public class CalendarAjaxController {
     }
 
 }
+

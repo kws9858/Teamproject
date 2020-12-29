@@ -63,8 +63,6 @@ public class IndexController {
 	public String meetingChat() {
 		return "/meeting/chat/home";
 	}
-	
-	
 
 	
 }

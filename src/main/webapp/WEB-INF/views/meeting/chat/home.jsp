@@ -73,7 +73,8 @@
 													<div class="w-75 d-inline-block v-middle pl-2">
 														<h6 class="message-title mb-0 mt-1">Meeting1</h6>
 														<span
-															class="font-12 text-nowrap d-block text-muted text-truncate">Last Message</span> <span
+															class="font-12 text-nowrap d-block text-muted text-truncate">Last
+															Message</span> <span
 															class="font-12 text-nowrap d-block text-muted">9:30
 															AM</span>
 													</div>
@@ -90,7 +91,8 @@
 													<div class="w-75 d-inline-block v-middle pl-2">
 														<h6 class="message-title mb-0 mt-1">Meeting2</h6>
 														<span
-															class="font-12 text-nowrap d-block text-muted text-truncate">Last Message</span> <span
+															class="font-12 text-nowrap d-block text-muted text-truncate">Last
+															Message</span> <span
 															class="font-12 text-nowrap d-block text-muted">9:10
 															AM</span>
 													</div>
@@ -213,16 +215,6 @@
 		</div>
 		<!-- ============================================================== -->
 		<!-- End Container fluid  -->
-		<!-- ============================================================== -->
-		<!-- ============================================================== -->
-		<!-- footer -->
-		<!-- ============================================================== -->
-		<footer class="footer text-center">
-			All Rights Reserved by Moegga. Designed and Developed by <a
-				href="#">Moegga</a>.
-		</footer>
-		<!-- ============================================================== -->
-		<!-- End footer -->
 		<!-- ============================================================== -->
 	</div>
 	<!-- ============================================================== -->

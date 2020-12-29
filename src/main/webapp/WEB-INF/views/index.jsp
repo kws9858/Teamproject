@@ -26,14 +26,13 @@
 
 <br/>
 <input type="button" value="채팅방 테스트용" id="chat" class="btn btn-primary" />
-<!-- <a href="<c:url value='/Meeting/Chat.do'/>">채팅방 테스트용입니다 지우지 말아주세요</a> -->
 
 <script src="<c:url value='resources/js/jquery.min.js'/>"></script>
 <script>
 $('#chat').click(function(){
    console.log("ddd");
    openWin = window.open("<c:url value='/Meeting/Chat.do'/>",
-         "addressForm", "width=600, height=1000 ,resizable = no, scrollbars = no");
+         "addressForm", "width=1000, height=800 ,resizable = no, scrollbars = no");
 });
 </script>
 

@@ -10,25 +10,23 @@
 
 <title>일정관리</title>
 
-<script src="./js/jquery-3.1.1.min.js"></script>
+<script src="<c:url value='/resources/js/jquery.min.js'/>"></script>
 
-<script src="./js/bootstrap.min.js"></script>
+<script src="<c:url value='/resources/js/bootstrap.min.js'/>"></script>
 
-<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="<c:url value='/resources/css/bootstrap.min.css'/>">
+<!-- 
+<link rel="stylesheet" href="<c:url value='/resources/css/bootstrap-theme.min.css'/>">
 
-<link rel="stylesheet" href="./css/bootstrap-theme.min.css">
+<script type="text/javascript" src="<c:url value='/resources/js/sweetalert.min.js?ver=1'/>"></script>
 
-<script type="text/javascript" src='./js/sweetalert.min.js?ver=1'></script>
+<link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/sweetalert.css?ver=1.2'/>">
+ -->
+<script type="text/javascript" src="<c:url value='/resources/js/stringBuffer.js'/>"></script>
 
-<link rel="stylesheet" type="text/css"
+<script type="text/javascript" src="<c:url value='/resources/js/calendar.js'/>"></script>
 
-    href='./css/sweetalert.css?ver=1.2'>
-
-<script type="text/javascript" src="./js/stringBuffer.js"></script>
-
-<script type="text/javascript" src="./js/calendar.js"></script>
-
-<script type="text/javascript" src="./js/calendarSchdule.js"></script>
+<script type="text/javascript" src="<c:url value='/resources/js/calendarSchdule.js'/>"></script>
 
 <style type="text/css">
 
@@ -307,6 +305,4 @@ thead td {
 </body>
 
 </html>
-
-
 
