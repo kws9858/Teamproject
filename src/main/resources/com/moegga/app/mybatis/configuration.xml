@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- myBatis 환경설정파일 
+1]데이타베이스 연결정보 설정 
+2]매퍼파일의 위치정보 설정 -->
+<configuration>
+
+	<properties resource="com/moegga/app/mybatis/dbconnect.properties"/>
+	
+	<typeAliases>
+	<typeAlias alias="memberDTO" type="com.moegga.app.service.MemberDTO" />
+	<typeAlias alias="townDTO" type="com.moegga.app.service.TownDTO" />
+	<typeAlias alias="fundingDTO" type="com.moegga.app.service.FundingDTO" />
+	<typeAlias alias="donationDTO" type="com.moegga.app.service.DonationDTO" />
+	<typeAlias alias="bbsDTO" type="com.moegga.app.service.BBSDTO" />
+	</typeAliases>
+	
+	<mappers>
+		<mapper	resource="com/moegga/app/mybatis/dynamicsql.xml" />
+		<mapper	resource="com/moegga/app/mybatis/Member.xml" />
+		<mapper	resource="com/moegga/app/mybatis/Town.xml" />
+		<mapper	resource="com/moegga/app/mybatis/Funding.xml" />
+		<mapper	resource="com/moegga/app/mybatis/Admin.xml" />
+		<mapper	resource="com/moegga/app/mybatis/Donation.xml" />
+		<mapper resource="com/moegga/app/mybatis/BBS.xml" />
+
+	</mappers>
+</configuration>
