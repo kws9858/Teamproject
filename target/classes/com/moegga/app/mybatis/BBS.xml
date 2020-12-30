@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.moegga.app.mybatis.BBS">
+	
+	<resultMap type="bbsDTO" id="bbsDTPResult">
+	
+		<result property="bbsNo" column="bbsNO"/>
+		<result property="title" column="title"/>
+		<result property="contents" column="contents"/>
+		<result property="meetingNO" column="meetingNO"/>
+		<result property="id" column="id"/>
+		<result property="division" column="division"/>
+		<result property="subCategoryNo" column="subCategoryNo"/>
+		<result property="bbsPostdate" column="bbsPostdate"/>
+	
+	</resultMap>
+	
+	
+	<insert id="BBSInsert" parameterType="java.util.Map">
+	INSERT INTO BBS(bbsNo,title,id,division,contents,BBSPOSTDATE)
+	VALUES(SEQ_BBS.NEXTVAL,#{title},#{id},3,#{contents},DEFAULT)
+	</insert>
+	
+	
+	
+	<select id="BBSSelectList" parameterType="java.util.Map" resultType="java.util.Map" >
+		
+		
+		SELECT * FROM 
+			(SELECT T.*,ROWNUM R FROM 
+				(SELECT bbsNO,title,m.id,name,BBSPOSTDATE FROM
+					 BBS b join MEMBER m ON b.id =m.id where division=3 
+					 ORDER BY BBSNO DESC) T)
+						WHERE R BETWEEN #{start} AND #{end}	
+		
+	</select>
+	
+	
+	<select  id="BBSGetTotalRecord" parameterType="java.util.Map" resultType="int">
+		SELECT COUNT(*) FROM BBS WHERE DIVISION=3
+		<if test="id != null"> and id = #{id}</if>
+		
+	</select>
+	
+	
+	<select id="BBSSelectOne" parameterType="java.util.Map" resultMap="bbsDTPResult">
+		SELECT b.*,m.id FROM BBS b JOIN MEMBER m ON b.id=m.id
+		WHERE  bbsNo=#{bbsNo}	
+		
+	</select>
+	
+	<update id="BBSUpdate" parameterType="java.util.Map">
+		UPDATE BBS SET title=#{title},contents=#{contents}
+		WHERE bbsNo = #{bbsNo}
+	
+	</update>
+	
+	<select id="BBSMySelectList" parameterType="java.util.Map" resultType="java.util.Map" >
+
+		SELECT * FROM 
+			(SELECT T.*,ROWNUM R FROM 
+				(SELECT bbsNO,title,contents,m.id,name,BBSPOSTDATE FROM
+					 BBS b join MEMBER m ON b.id =m.id where division=3 and m.id= #{id}
+					 ORDER BY BBSNO DESC) T)
+						WHERE R BETWEEN #{start} AND #{end}	
+		
+	</select>
+	
+
+</mapper>
