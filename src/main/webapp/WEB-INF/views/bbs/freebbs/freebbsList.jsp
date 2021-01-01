@@ -92,7 +92,7 @@
                               <!-- 모임 사진, 이름, 작성 날짜, 메뉴 -->
                               <div class="row col-md-12" style="margin-bottom: 20px; height: 70px; margin-right: 0px; margin-left: 0px; padding-left: 0px; padding-right: 0px; ">
                                  <div class="icon d-flex align-items-center"></div>
-                                 <div class="col-md-4"><h2>모임이름</h2></div>
+                                 <div class="col-md-4"><h2>작성자</h2></div>
                                  <div class="col-md-5"></div>
                                  <!-- 드롭다운 -->
                                     <div class="btn btn-default dropdown-toggle col-md-1 col-md-offset-3" style="padding-left: 0px; padding-right: 0px; margin-top: 10px;" type="button" id="menu" data-toggle="dropdown">
@@ -268,7 +268,7 @@
                               <!-- 모임 사진, 이름, 작성 날짜, 메뉴 -->
                               <div class="row col-md-12" style="margin-bottom: 20px; height: 70px; margin-right: 0px; margin-left: 0px; padding-left: 0px; padding-right: 0px; ">
                                  <div class="icon d-flex align-items-center"></div>
-                                 <div class="col-md-4 col-md-offset-2"><h2>모임이름</h2></div>
+                                 <div class="col-md-4 col-md-offset-2"><h2>작성자</h2></div>
                                  <div class="col-md-5 col-md-offset-6"></div>
                                  <!-- 드롭다운 -->
                                     <div class="btn btn-default dropdown-toggle col-md-1 col-md-offset-3" style="padding-left: 0px; padding-right: 0px; margin-top: 10px;" type="button" id="menu" data-toggle="dropdown">

@@ -76,22 +76,85 @@ ul li{list-style-type: none; text-align:center; display:inline-block; margin-lef
 
 --%>
  
-   <footer class="footer">
-<div id ="foot" class="jumbotron text-center mt-5 mb-0"> <h3 class="text-secondary">MOEGGA</h3> 
-
- <ul >
+ 
+    <!-- =============================푸터====================================== -->
+    <footer class="ftco-footer"><h3 class="text-secondary">MOEGGA</h3> 
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-sm-12 col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2 logo"><a href="#">Connect</a></h2>
+              <p>Far far away, behind the word mountains, far from the countries.</p>
+              <ul class="ftco-footer-social list-unstyled mt-2">
+                <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">Extra Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Affiliate Program</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Business Services</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Education Services</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Gift Cards</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">Legal</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Join us</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Blog</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Privacy &amp; Policy</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2"><a href="#">Company</a></h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About Us</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Blog</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact</a></li>
+                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Careers</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md">
+            <div class="ftco-footer-widget mb-4">
+               <h2 class="ftco-heading-2"><a data-toggle="modal" href="javascript:isLogin()">Have a Questions?</a></h2><!-- 문의하기 -->
+               <div class="block-23 mb-3">
+                 <ul>
+                   <li><span class="icon fa fa-map marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+                   <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+                   <li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span class="text">info@yourdomain.com</span></a></li>
+                 </ul>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid px-0 py-5 bg-black">
+         <div class="container">
+            <div class="row">
+             <div class="col-md-12">
       
-      
-		<li><a data-toggle="modal" href="javascript:isLogin()">문의하기</a></li>
-		<li><a href="#">회사소개</a></li>
-		<li><a href="#">개인정보약관</a></li>
-		 
- </ul>
-
-
-<div class="footer text-center" style="margin-top:20px">
-ⓒ2020 Copyright <a href="#">한국 소프트웨어 인재 개발원</a>
-  </footer>
+               <p class="mb-0" style="color: rgba(255,255,255,.5);"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+     Copyright &copy;<script>document.write(new Date().getFullYear());</script> 한국 소프트웨어 인재 개발원 | This template is made with <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+             </div>
+           </div>
+         </div>
+      </div>
+    </footer>
+    
+    
+ 
 
 <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
@@ -160,7 +223,7 @@ ul li{list-style-type: none; text-align:center; display:inline-block; margin-lef
   <script src="<c:url value="/resources/js/jquery.animateNumber.min.js"/>"></script>
   <script src="<c:url value="/resources/js/scrollax.min.js"/>"></script>
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+
 
   <script src="resources/js/google-map.js"></script>
   <script src="resources/js/main.js"></script>
