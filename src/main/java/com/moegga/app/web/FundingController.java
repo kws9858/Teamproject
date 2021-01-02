@@ -16,6 +16,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.moegga.app.service.DonationDTO;
 import com.moegga.app.service.DonationService;
 import com.moegga.app.service.FundingDTO;
@@ -37,6 +39,7 @@ public class FundingController {
 	public String fundingList(Model model) {
 		Map map = new HashMap();
 		List<FundingDTO> list = funding.selectFundingList(map);
+		
 		SimpleDateFormat mSimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date currentTime = new Date ();
 		String mTime = mSimpleDateFormat.format (currentTime);
@@ -50,7 +53,6 @@ public class FundingController {
 		}
 
 		for(FundingDTO dto:list ) {
-			System.out.println("미팅넘버:"+dto.getMeetingNo());
 			map.put("meetingNo", dto.getMeetingNo());
 			//모임소개글이 너무길면 짤라서 뿌려줌
 			if(dto.getMeetingDescription().length()>40) {
@@ -63,13 +65,13 @@ public class FundingController {
 		     dto.setCalDateDays(calDateDays);
 		    //donationDTO 꺼내오기
 		     List<DonationDTO> donationList =donation.selectDonationList(map);
-		     int donation=0;
+		    
 		     for(DonationDTO donationDTO : donationList) {
 		    	 dto.setDonationList(donationList.size());
-		    	 donation+=donationDTO.getDonation();
 		     }
-		     dto.setAmount(String.valueOf(donation));
+		    
 		}
+		System.out.println(list);
 		
 		
 		
@@ -92,7 +94,7 @@ public class FundingController {
 			town =townDTO.getTown();
 			map.put("town", town);
 		}
-		System.out.println(town);
+		
 		
 		
 		
@@ -110,7 +112,6 @@ public class FundingController {
 		}
 
 		for(FundingDTO dto:list ) {
-			System.out.println("미팅넘버:"+dto.getMeetingNo());
 			map.put("meetingNo", dto.getMeetingNo());
 			//모임소개글이 너무길면 짤라서 뿌려줌
 			if(dto.getMeetingDescription().length()>40) {
@@ -123,12 +124,10 @@ public class FundingController {
 		     dto.setCalDateDays(calDateDays);
 		    //donationDTO 꺼내오기
 		     List<DonationDTO> donationList =donation.selectDonationList(map);
-		     int donation=0;
+		    
 		     for(DonationDTO donationDTO : donationList) {
-		    	 dto.setDonationList(donationList.size());
-		    	 donation+=donationDTO.getDonation();
+		    	 dto.setDonationList(donationList.size()); 
 		     }
-		     dto.setAmount(String.valueOf(donation));
 		}
 		
 		
@@ -141,7 +140,36 @@ public class FundingController {
 	}
 	
 	@RequestMapping(value="/funding/Funding.do")
-	public String funding() {
+	public String funding(@RequestParam Map map,Model model) {
+		System.out.println("meetingNo:"+map.get("meetingNo").toString());
+		FundingDTO dto =funding.selectFundingOne(map);
+		
+		
+		SimpleDateFormat mSimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Date currentTime = new Date ();
+		String mTime = mSimpleDateFormat.format (currentTime);
+		
+		try {
+			currentTime=mSimpleDateFormat.parse(mTime);
+			
+		} catch (ParseException e) {
+			
+			e.printStackTrace();
+		}
+		//펀딩 끝나는날과 현재날 빼서 일수 계산 로직
+		 long calDate = currentTime.getTime() - dto.getFundingEnddate().getTime();  
+	     int calDateDays = (int)(calDate / ( 24*60*60*1000)); 
+	     calDateDays = Math.abs(calDateDays);
+	     dto.setCalDateDays(calDateDays);
+	     
+	     List<DonationDTO> donationList =donation.selectDonationList(map);
+	     dto.setDonationList(donationList.size());
+	     
+	     dto.setMeetingDescription(dto.getMeetingDescription().replace("\n","<br/>"));
+		
+		model.addAttribute("dto",dto);
+		
+
 		return "/funding/funding.tiles";
 	}
 }

@@ -10,6 +10,9 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.moegga.app.service.BBSAccusationDTO;
+import com.moegga.app.service.BBSDTO;
+import com.moegga.app.service.CategoryDTO;
+import com.moegga.app.service.FundingDTO;
 import com.moegga.app.service.MeetingAccusationDTO;
 
 @Repository("adminDAO")
@@ -130,4 +133,81 @@ public class AdminDAO {
 		return sqlMapper.selectList("searchMeeting",keyword);
 	}
 	
+    //관리자 문의게시판 목록
+	public List<Map> questionselectList(Map map) {
+		
+		return sqlMapper.selectList("BBSSelectList",map);
+	}
+	 //관리자 문의게시판 문의 총갯수
+	public int getTotalRecord(Map map) {
+		
+		return sqlMapper.selectOne("BBSGetTotalRecord",map);
+	}
+	
+	 //관리자 문의게시판 문의 총갯수 문의 보기
+	public BBSDTO qsusetionselectOne(Map map){
+			
+		return sqlMapper.selectOne("BBSSelectOne",map);
+	}
+	
+	
+	 //관리자 문의게시판 문의 답장
+	public int qsusetionsupdate(Map map) {
+		
+		return sqlMapper.update("BBSUpdate",map);
+	
+	}
+	
+	//관리자 펀딩관리 리스트 보기
+
+	public List<FundingDTO> fundingadminlist(Map map) {
+	
+		return sqlMapper.selectList("fundingadminlist",map);
+	
+	}
+	//관리자 펀딩관리 리스트 토탈
+	public int getfundingtotal(Map map) {
+		
+		return sqlMapper.selectOne("getfundingtotal",map);
+	}
+	//펀딩 수락 중지용
+	public int fundingupdate(Map map) {
+		
+		return sqlMapper.update("fundingupdate",map);
+		
+	}
+	
+	//펀딩 삭제
+	public int fundingDelete(Map map) {
+		
+		return sqlMapper.delete("fundingDelete",map);
+		
+	}
+	
+	////카테고리 리스트 
+	public List<CategoryDTO> categorylist(Map map) {
+		
+		return sqlMapper.selectList("categorylist",map);
+	
+	}
+	
+	
+	//관리자 카테고리 리스트 토탈
+	public int getcategorygtotal(Map map) {
+			
+		return sqlMapper.selectOne("getcategorytotal",map);
+	}
+		
+	 //관리자 카테고리 추가
+	public int categoryadd(Map map) {
+			
+		return sqlMapper.insert("categoryadd",map);
+	}		
+	
+	public int categoryDelete(Map map) {
+		
+		return sqlMapper.delete("categoryDelete",map);
+		
+	}
+		
 }

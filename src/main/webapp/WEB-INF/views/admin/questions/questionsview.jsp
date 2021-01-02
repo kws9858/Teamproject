@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -33,7 +34,7 @@
 									<div class="col-sm-8">
 									<textarea class="form-control" name="contents" rows="10">[문의내용]:${bbsdto.contents}
 																		
-[답변:]</textarea>
+[답변]:</textarea>
 									</div>
 								</div>
 							</div>
@@ -50,4 +51,5 @@
 		</div>
 	</div>
 </div>
+
 

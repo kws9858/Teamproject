@@ -26,39 +26,16 @@
 	
 	
 	
-	<select id="BBSSelectList" parameterType="java.util.Map" resultType="java.util.Map" >
-		
-		
-		SELECT * FROM 
-			(SELECT T.*,ROWNUM R FROM 
-				(SELECT bbsNO,title,m.id,name,BBSPOSTDATE FROM
-					 BBS b join MEMBER m ON b.id =m.id where division=3 
-					 ORDER BY BBSNO DESC) T)
-						WHERE R BETWEEN #{start} AND #{end}	
-		
-	</select>
 	
 	
 	<select  id="BBSGetTotalRecord" parameterType="java.util.Map" resultType="int">
 		SELECT COUNT(*) FROM BBS WHERE DIVISION=3
+		<if test="id != null">and id = #{id}</if>
 		
 	</select>
 	
-	
-	<select id="BBSSelectOne" parameterType="java.util.Map" resultMap="bbsDTPResult">
-		SELECT b.*,m.id FROM BBS b JOIN MEMBER m ON b.id=m.id
-		WHERE  bbsNo=#{bbsNo}	
-		
-	</select>
-	
-	<update id="BBSUpdate" parameterType="java.util.Map">
-		UPDATE BBS SET title=#{title},contents=#{contents}
-		WHERE bbsNo = #{bbsNo}
-	
-	</update>
 	
 	<select id="BBSMySelectList" parameterType="java.util.Map" resultType="java.util.Map" >
-		
 		
 		
 		SELECT * FROM 

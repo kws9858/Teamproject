@@ -248,12 +248,24 @@
 							href="<c:url value="/Admin/Analysis.do"/>" aria-expanded="false"><i
 								data-feather="sidebar" class="feather-icon"></i><span
 								class="hide-menu">통계정보 상세보기 </span></a></li>
+							<li class="sidebar-item"><a class="sidebar-link has-arrow"
+							href="javascript:void(0)" aria-expanded="false"><i
+								data-feather="file-text" class="feather-icon"></i><span
+								class="hide-menu"> 펀딩관리 </span></a>
+							<ul aria-expanded="false"
+								class="collapse  first-level base-level-line">
+								<li class="sidebar-item"><a href="<c:url value='/FundingAdminlist.do'/>"
+									class="sidebar-link"><span class="hide-menu">승인 대기 목록
+									</span></a></li>
+								<li class="sidebar-item"><a href="<c:url value='/FundingAdminStartlist.do'/>"
+									class="sidebar-link"><span class="hide-menu"> 진행중인 펀딩
+											모임 조회 </span></a></li>
+								<li class="sidebar-item"><a href="<c:url value='/FundingAdminStoplist.do'/>"
+									class="sidebar-link"><span class="hide-menu"> 정지된 펀딩
+											모임 조회 </span></a></li>			
+							</ul></li>
 						<li class="sidebar-item"><a class="sidebar-link sidebar-link"
-							href="ui-cards.html" aria-expanded="false"><i
-								data-feather="sidebar" class="feather-icon"></i><span
-								class="hide-menu">펀딩 관리 </span></a></li>
-						<li class="sidebar-item"><a class="sidebar-link sidebar-link"
-							href="ui-cards.html" aria-expanded="false"><i
+							href="<c:url value='/Categorylist.do'/>" aria-expanded="false"><i
 								data-feather="sidebar" class="feather-icon"></i><span
 								class="hide-menu"> 카테고리 관리 </span></a></li>
 						<li class="sidebar-item"><a class="sidebar-link sidebar-link"

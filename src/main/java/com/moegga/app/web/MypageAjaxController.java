@@ -38,7 +38,7 @@ public class MypageAjaxController {
 		JSONObject json = new JSONObject();
 		
 		if(map.get("infoPwd").toString().equals(dto.getPwd())) {
-			System.out.println("비밀번호 일치");
+
 			json.put("infoPwdDisplay", "비밀번호가 일치해요");
 			json.put("infoPwdCheck", "yes");
 			
@@ -68,7 +68,7 @@ public class MypageAjaxController {
 		JSONObject json = new JSONObject();
 		
 		if(map.get("updatePwd").toString().equals(dto.getPwd())) {
-			System.out.println("비밀번호 일치");
+			
 			json.put("updatePwdDisplay", "비밀번호가 일치해요");
 			json.put("updatePwdCheck", "yes");
 			
@@ -96,7 +96,8 @@ public class MypageAjaxController {
 			JSONObject json = new JSONObject();
 			
 			if(map.get("withdrawPwd").toString().equals(dto.getPwd())) {
-				System.out.println("비밀번호 일치");
+				
+
 				json.put("withdrawPwdDisplay", "비밀번호가 일치해요");
 				json.put("withdrawPwdCheck", "yes");
 				

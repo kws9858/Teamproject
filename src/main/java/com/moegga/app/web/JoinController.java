@@ -31,13 +31,6 @@ public class JoinController {
 	@RequestMapping("/JoinAddInformation.do")
 	public String joinAddInformation(@RequestParam Map map, Model model) {
 
-		System.out.println(map.get("user_id"));
-		System.out.println(map.get("user_name"));
-		System.out.println(map.get("user_password"));
-		System.out.println(map.get("user_age"));
-		System.out.println(map.get("gender"));
-		System.out.println(map.get("tel"));
-
 		model.addAttribute("user_id", map.get("user_id"));
 
 		member.join(map);
@@ -52,11 +45,7 @@ public class JoinController {
 		map.put("pr",map.get("pr").toString().replace("\n","<br/>"));
 		map.put("about_me",map.get("about_me").toString().replace("\n","<br/>"));
 		String id =map.get("user_id").toString();
-		System.out.println(id);
-		System.out.println(upload.getOriginalFilename().toString());
-		System.out.println(map.get("pr").toString());
-		System.out.println(map.get("about_me").toString());
-		System.out.println("주소 :"+map.get("addr"));
+
 		map.put("id", id);
 		map.put("img", upload.getOriginalFilename().toString());
 

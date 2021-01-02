@@ -13,14 +13,12 @@
 			<span class="fa fa-bars"></span> Menu
 		</button>
 		<div class="collapse navbar-collapse" id="ftco-nav">
-			<ul class="navbar-nav m-auto">
-				<li class="nav-item"><a href="index.jsp" class="nav-link">동네
-						둘러보기</a></li>
-				<li class="nav-item"><a href="about.jsp" class="nav-link">게시글</a></li>
-				<li class="nav-item"><a href="coming-soon.jsp" class="nav-link">공연</a></li>
-				<li class="nav-item active"><a
-					href="<c:url value="/FundingList.do"/>" class="nav-link">펀딩</a></li>
-
+			<ul class="navbar-nav m-auto">W
+	
+				<li class="nav-item"><a href="<c:url value='/AllOfMeeting.do'/>" class="nav-link">동네 둘러보기</a></li>
+	            <li class="nav-item"><a href="<c:url value='/MeetingBBS.do'/>" class="nav-link">게시글</a></li>
+				<li class="nav-item"><a href="<c:url value='/Perform.do'/>" class="nav-link">공연</a></li>
+				<li class="nav-item active"><a href="<c:url value='/FundingList.do'/>" class="nav-link">펀딩</a></li>
 			</ul>
 		</div>
 	</div>
@@ -54,12 +52,12 @@
 		</div>
 		<hr />
 	</div>
-<c:if test="${not empty town and town ne null }">
+<c:if test="${town ne null and town ne '' }">
 	<div class="container ">
 		<div class="row mb-5">
 			<div class="col-lg-12">
 				<div class="row">
-
+					<c:if test="${not empty list}" var="listNull">
 					<c:forEach var="item" items="${list }" varStatus="loop">
 
 						<div class="col-md-12 pt-5">
@@ -103,7 +101,7 @@
 											:${item.donationList }</span><span>명</span>
 										<div style="float: right;">
 											<a
-												href="<c:url value='/funding/Funding.do?no=${item.meetingNo }'/>"><input
+												href="<c:url value='/funding/Funding.do?meetingNo=${item.meetingNo }'/>"><input
 												type="button" class="btn btn-danger" value="펀딩하러가기" /></a>
 										</div>
 									</div>
@@ -111,6 +109,12 @@
 							</div>
 						</div>
 					</c:forEach>
+					</c:if>
+					<c:if test="${not listNull }">
+					<div style="margin:0 auto; padding-top: 20%">
+					'${town }' 동네에서 펀딩하는 모임이 없어요 !
+					</div>
+					</c:if>
 
 				</div>
 				<!-- class="row" -->
@@ -123,7 +127,8 @@
 <section class="ftco-section ftco-no-pt" id="section">
 	<div class="container">
 		<div class="row">
-		<c:if test="${not notTown and town eq null}">
+		<c:if test="${town eq null or town eq ''}">
+
 			<div
 				class="col-md-6 pt-3 d-flex justify-content-center align-items-center">
 					<img id="real_img"

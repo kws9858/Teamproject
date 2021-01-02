@@ -27,10 +27,23 @@ public class FundingServiceImpl implements FundingService {
 		return dao.selectFundingList(map);
 	}
 
-	
 
-	
-	
+
+
+	@Override
+	public int updateAmount(Map map) {
+		return dao.updateAmount(map);
+		
+		
+	}
+
+
+	@Override
+	public FundingDTO selectFundingOne(Map map) {
+		
+		return dao.selectFundingOne(map);
+	}
+
 	
 
 }

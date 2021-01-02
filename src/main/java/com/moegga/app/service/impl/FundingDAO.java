@@ -24,6 +24,22 @@ public class FundingDAO {
 	}
 
 
+
+
+	public int updateAmount(Map map) {
+		
+		return fundingTemplate.update("updateAmount",map);
+	}
+
+
+	public FundingDTO selectFundingOne(Map map) {
+		// TODO Auto-generated method stub
+		return fundingTemplate.selectOne("selectFundingOne",map);
+	}
+
+
+
+
 	
 
 }

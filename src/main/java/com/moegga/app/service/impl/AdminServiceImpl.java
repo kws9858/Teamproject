@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 
 import com.moegga.app.service.AdminService;
 import com.moegga.app.service.BBSAccusationDTO;
+import com.moegga.app.service.BBSDTO;
+import com.moegga.app.service.CategoryDTO;
+import com.moegga.app.service.FundingDTO;
 import com.moegga.app.service.MeetingAccusationDTO;
 
 @Service("adminService")
@@ -156,7 +159,81 @@ public class AdminServiceImpl implements AdminService {
 		return dao.searchMeeting(keyword);
 	}
 	
-
+	///관리자 문의게시판
+	public List<Map> questionselectList(Map map) {
+		
+		return dao.questionselectList(map);
+	}
+	///문의총갯수
+	@Override
+	public int getTotalRecord(Map map) {
 	
+		return dao.getTotalRecord(map);
+	}
+	
+	//문의 보기
+	@Override
+	public BBSDTO qsusetionselectOne(Map map) {
+		
+		return dao.qsusetionselectOne(map);
+	}
 
+	//문의 답장용
+	public int qsusetionsupdate(Map map) {
+		
+		return dao.qsusetionsupdate(map);
+	}
+	
+	
+	///펀딩 리스트불러오기
+	@Override
+	public List<FundingDTO> fundingadminlist(Map map) {
+	
+		return dao.fundingadminlist(map);
+	}
+	
+	///펀딩 총 갯수
+	@Override
+	public int getfundingtotal(Map map) {
+			return dao.getfundingtotal(map);
+	}
+	
+	//펀딩 수락 중지용
+	@Override
+	public int fundingupdate(Map map) {
+		// TODO Auto-generated method stub
+		return dao.fundingupdate(map);
+	}
+	
+	
+	///카테고리 리스트
+	@Override
+	public List<CategoryDTO> categorylist(Map map) {
+		
+		return dao.categorylist(map);
+	}
+	
+	//카테고리 총갯수
+	@Override
+	public int getcategorygtotal(Map map) {
+		// TODO Auto-generated method stub
+		return dao.getcategorygtotal(map);
+	}
+	
+	////카테고리 추가
+	@Override
+	public int categoryadd(Map map) {
+		
+		return dao.categoryadd(map);
+	}
+	@Override
+	public int categoryDelete(Map map) {
+		
+		return dao.categoryDelete(map);
+	}
+	@Override
+	public int fundingDelete(Map map) {
+		
+		return dao.fundingDelete(map);
+	}
 }

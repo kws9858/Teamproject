@@ -76,12 +76,6 @@ public class InfoUpdateController {
 
 		map.put("id", id);
 
-		System.out.println(map.get("user_name"));
-		System.out.println(map.get("user_age"));
-		System.out.println(map.get("tel"));
-		System.out.println(map.get("gender"));
-		System.out.println("주소:" + map.get("addr"));
-
 		TownDTO dto = town.selectTownById(map);
 
 		if (dto == null) {
@@ -103,37 +97,35 @@ public class InfoUpdateController {
 		map.put("id", id);
 		File file = new File(path + File.separator + id + File.separator + upload.getOriginalFilename());
 		MemberDTO dto = member.selectOneById(map);
-		System.out.println("db에 있는 사진명 :" + dto.getProfileimg());
-		System.out.println("업로드한 사진명 :" + upload.getOriginalFilename());
+	
 		map.put("img", upload.getOriginalFilename());
 		map.put("pr", map.get("pr"));
-		System.out.println("pr:"+map.get("pr"));
+		
 		map.put("about_me", map.get("about_me"));
-		System.out.println("about_me:"+map.get("about_me"));
+		
 		
 
 		if (dto.getProfileimg() == null) {
 			if(upload.getOriginalFilename().equals("")) {
-				System.out.println("이전프로필사진 없고 수정할 사진 없고");
+				
 				member.updateInfo(map);
 			}else {
-				System.out.println("이전프로필사진 없고 수정할 사진 있고");
+				
 				member.updateInfo(map);
 				upload.transferTo(file);
 			}
 		}else {
 			if(upload.getOriginalFilename().equals("")) {
 				if(map.get("delete").equals("delete")) {
-					System.out.println("이전 프로필 사진 있는데 삭제하고싶다");
+					
 					member.updateInfo(map);
 					
 				}else {
-					System.out.println("이전 프로필 사진 있는데 그냥 냅두고싶다");
 					map.put("img",dto.getProfileimg());
 					member.updateInfo(map);
 				}
 			}else {
-				System.out.println("이전프로필사진 있고 수정할 사진 있고");
+
 				member.updateInfo(map);
 				upload.transferTo(file);
 			}

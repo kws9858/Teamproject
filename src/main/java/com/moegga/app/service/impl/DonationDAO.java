@@ -23,6 +23,27 @@ public class DonationDAO {
 		return donationTemplate.selectList("selectDonationList",map);
 	}
 
+
+
+	public DonationDTO selectDonationOne(Map map) {
+		// TODO Auto-generated method stub
+		return donationTemplate.selectOne("selectDonationOne",map);
+	}
+
+	public int insertDonation(Map map) {
+		// TODO Auto-generated method stub
+		return donationTemplate.insert("insertDonation",map);
+	}
+
+	public int updateDonation(Map map) {
+		// TODO Auto-generated method stub
+		return donationTemplate.update("updateDonation",map);
+	}
+
+	
+
+
+
 	
 
 }

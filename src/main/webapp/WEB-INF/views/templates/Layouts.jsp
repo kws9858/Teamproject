@@ -25,14 +25,76 @@
     <link rel="stylesheet" href="<c:url value="/resources/css/flaticon.css"/>">
     <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.min.css">
+    
+    <!--
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/resources/demos/style.css">
+	-->
+
   </head>
 <body>
 	<!--top부분 시작-->
 	<tiles:insertAttribute name="top"/>
 	<!--top부분 끝 -->
+	
 	<!--body부분 시작-->
 	<tiles:insertAttribute name="body"/>
+	
+	<!--플로팅 메뉴 부분 시작-->
+	
+	<div style="height:5000px">
+	</div>
+	<div id="floatMenu">
+		<div>
+		모임 채팅
+		</div>
+		<div>
+		자유게시판 글쓰기
+		</div>
+		<div>
+		chatbot
+		</div>
+	</div>
+	
+	    <script>
+			$(document).ready(function() {
+			
+				// 기존 css에서 플로팅 배너 위치(top)값을 가져와 저장한다.
+				var floatPosition = parseInt($("#floatMenu").css('top'));
+				// 250px 이런식으로 가져오므로 여기서 숫자만 가져온다. parseInt( 값 );
+			
+				$(window).scroll(function() {
+					// 현재 스크롤 위치를 가져온다.
+					var scrollTop = $(window).scrollTop();
+					var newPosition = scrollTop + floatPosition + "px";
+			
+					/* 애니메이션 없이 바로 따라감
+					 $("#floatMenu").css('top', newPosition);
+					 */
+			
+					$("#floatMenu").stop().animate({
+						"top" : newPosition
+					}, 500);
+			
+				}).scroll();
+			
+			});
+			
+			$("#floatMenu").stop().animate({
+				"top" : newPosition
+			}, {
+				'duration' : 500,
+				'easing' : 'easeInOutCubic',
+				'complete' : function() {
+					console.log('이동 완료하였습니다.');
+				}
+			});
+		</script>
+	<!--플로팅 메뉴 부분 끝-->
+	
 	<!--body부분 끝 -->
+	
+
 	<!--footer부분 시작-->
 	<tiles:insertAttribute name="footer"/>
 	<!--footer부분 끝 -->

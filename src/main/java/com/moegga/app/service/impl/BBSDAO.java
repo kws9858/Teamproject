@@ -1,3 +1,4 @@
+
 package com.moegga.app.service.impl;
 
 import java.util.List;
@@ -19,11 +20,7 @@ public class BBSDAO implements BBSService{
 
 
 	
-	@Override
-	public List<Map> selectList(Map map) {
-		
-		return bbsTemplate.selectList("BBSSelectList",map);
-	}
+	
 
 	@Override
 	public int insert(Map map) {
@@ -34,16 +31,12 @@ public class BBSDAO implements BBSService{
 	
 	
 	public int getTotalRecord(Map map) {
-		System.out.println("들어옴");
+	
 		return bbsTemplate.selectOne("BBSGetTotalRecord",map);
 	}
 
 
-	@Override
-	public BBSDTO selectOne(Map map) {
-		
-		return bbsTemplate.selectOne("BBSSelectOne",map);
-	}
+
 
 	@Override
 	public int delete(Map map) {
@@ -51,20 +44,16 @@ public class BBSDAO implements BBSService{
 		return 0;
 	}
 
-	@Override
-	public int update(Map map) {
-		
-		return bbsTemplate.update("BBSUpdate",map);
-	
-	}
+
 
 	
 	//내 문의함
 	@Override
 	public List<Map> myselectList(Map map) {
-		 System.out.println("DAO들어옴");
+		
 		return bbsTemplate.selectList("BBSMySelectList",map);
 	}
 
 	
 }
+

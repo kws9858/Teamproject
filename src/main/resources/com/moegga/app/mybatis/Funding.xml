@@ -5,13 +5,27 @@
 
 <mapper namespace="com.moegga.app.mybatis.Funding">
 
-	<select id="selectFundingList" parameterType="Map" resultType="fundingDTO">
+
+	<select id="selectFundingList" parameterType="java.util.Map" resultType="fundingDTO">
 	 SELECT * FROM FUNDING f 
 	 JOIN MEETING m ON f.meetingno = m.meetingno
 	 JOIN CATEGORY c ON m.categoryno=c.categoryno
+	 WHERE f.enabled='1'
 	 <if test="town !=null">	
-			WHERE town=#{town}
+			AND m.town=#{town}
 		</if>
 	</select>
 	
+	<select id="selectFundingOne" parameterType="java.util.Map" resultType="fundingDTO">
+	 SELECT * FROM FUNDING f 
+	 JOIN MEETING m ON f.meetingno = m.meetingno
+	 JOIN CATEGORY c ON m.categoryno=c.categoryno
+	 WHERE f.meetingno=#{meetingNo} AND f.enabled='1'
+
+	</select>
+	
+	<update id="updateAmount" parameterType="java.util.Map">
+	 UPDATE FUNDING SET amount=#{amount} WHERE meetingno=#{meetingNo} AND enabled='1'
+	</update>
+
 </mapper>

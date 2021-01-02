@@ -8,4 +8,13 @@ public interface FundingService {
 	public List<FundingDTO> selectFundingList(Map map);
 
 
+
+
+	public int updateAmount(Map map);
+
+	public FundingDTO selectFundingOne(Map map);
+
+
+
+
 }

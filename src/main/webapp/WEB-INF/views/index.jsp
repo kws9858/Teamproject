@@ -13,10 +13,12 @@
       </button>
       <div class="collapse navbar-collapse" id="ftco-nav">
          <ul class="navbar-nav m-auto">
-            <li class="nav-item"><a href="<c:url value='/MeetingView.do'/>" class="nav-link">동네 둘러보기</a></li>
-            <li class="nav-item"><a href="about.jsp" class="nav-link">게시글</a></li>
-            <li class="nav-item"><a href="coming-soon.jsp" class="nav-link">공연</a></li>
-            <li class="nav-item"><a href="<c:url value='/FundingList.do'/>" class="nav-link">펀딩</a></li>
+
+				<li class="nav-item"><a href="<c:url value='/AllOfMeeting.do'/>" class="nav-link">동네 둘러보기</a></li>
+	            <li class="nav-item"><a href="<c:url value='/MeetingBBS.do'/>" class="nav-link">게시글</a></li>
+				<li class="nav-item"><a href="<c:url value='/Perform.do'/>" class="nav-link">공연</a></li>
+				<li class="nav-item"><a href="<c:url value='/FundingList.do'/>" class="nav-link">펀딩</a></li>
+
          </ul>
       </div>
    </div>

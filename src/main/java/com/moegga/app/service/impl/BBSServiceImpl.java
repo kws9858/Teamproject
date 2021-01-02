@@ -17,11 +17,7 @@ public class BBSServiceImpl implements BBSService {
 	@Resource(name="bBBSDAO")
 	private BBSDAO dao;
 
-	@Override
-	public List<Map> selectList(Map map) {
-		
-		return dao.selectList(map);
-	}
+	
 
 	@Override
 	public int getTotalRecord(Map map) {
@@ -29,11 +25,7 @@ public class BBSServiceImpl implements BBSService {
 		return dao.getTotalRecord(map);
 	}
 
-	@Override
-	public BBSDTO selectOne(Map map) {
-		
-		return dao.selectOne(map);
-	}
+
 
 	@Override
 	public int insert(Map map) {
@@ -47,11 +39,7 @@ public class BBSServiceImpl implements BBSService {
 		return 0;
 	}
 
-	@Override
-	public int update(Map map) {
-		
-		return dao.update(map);
-	}
+	
 
 	@Override
 	public List<Map> myselectList(Map map) {

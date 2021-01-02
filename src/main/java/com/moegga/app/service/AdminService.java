@@ -46,5 +46,30 @@ public interface AdminService {
 	List<Map> searchMember(String keyword);
 	/*정지 모임 검색용*/
 	List<Map> searchMeeting(String keyword);
+
+	//admin애서 전체 문의게시판 리스트
+	List<Map> questionselectList(Map map);
+	int getTotalRecord(Map map);
+	//admin 문의보기
+	BBSDTO qsusetionselectOne(Map map);
+	//admin 문의 답장용
+	int qsusetionsupdate(Map map);
+	///admin 펀딩 목록가져오기
+	List<FundingDTO> fundingadminlist(Map map);
+	///admin 펀딩 총갯수
+	int getfundingtotal(Map map);
 	
+	////펀딩 승인 수락용
+	int fundingupdate(Map map);
+	///펀딩 삭제
+	int  fundingDelete(Map map);
+	///카테고리 리스트용
+	List<CategoryDTO> categorylist(Map map);
+	//카테고리 총갯수
+	int getcategorygtotal(Map map);
+	
+	////카테고리 추가
+	int categoryadd(Map map);
+	///카테고리 삭제
+	int categoryDelete(Map map);
 }

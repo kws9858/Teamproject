@@ -24,6 +24,7 @@ public class DonationServiceImpl implements DonationService {
 
 	@Override
 	public List<DonationDTO> selectDonationList(Map map) {
+
 		// TODO Auto-generaasdasdasdted method stub
 		return dao.selectDonationList(map);
 	}
@@ -37,4 +38,27 @@ public class DonationServiceImpl implements DonationService {
 	
 	
 
-}
+
+	
+
+	@Override
+	public DonationDTO selectDonationOne(Map map) {
+		// TODO Auto-generated method stub
+		return dao.selectDonationOne(map);
+	}
+
+	@Override
+	public int insertDonation(Map map) {
+		// TODO Auto-generated method stub
+		return dao.insertDonation(map);
+	}
+
+	@Override
+	public int updateDonation(Map map) {
+		// TODO Auto-generated method stub
+		return dao.updateDonation(map);
+	}
+
+		
+	}
+

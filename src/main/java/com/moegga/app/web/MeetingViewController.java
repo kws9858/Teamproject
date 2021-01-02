@@ -15,7 +15,9 @@ public class MeetingViewController {
 	
 	@RequestMapping("/MeetingView.do")
 	public String MeetingView() {
-		return "/meeting/bbs/meetingView.tiles";
+
+		return "/meeting/meetingView.tiles";
+
 	}
 	
 	

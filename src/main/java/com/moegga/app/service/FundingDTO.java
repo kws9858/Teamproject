@@ -11,7 +11,10 @@ import lombok.ToString;
 public class FundingDTO {
 
 	
-	private String amount;
+
+	private int amount;
+	
+
 	private Date fundingEnddate;
 	//실제 DB엔 없고 계산할값 넣을 변수
 	private int calDateDays;
@@ -33,7 +36,6 @@ public class FundingDTO {
 	//카테고리
 	private String mainCategory;
 	private String subCategory;
-	
 	
 	
 	

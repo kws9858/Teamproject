@@ -32,7 +32,6 @@ public class JoinAjaxController {
 
 		int able = member.checkId(map);
 		JSONObject json = new JSONObject();
-		System.out.println("아이디 갯수:" + able);
 		json.put("chId", "사용 불가능한 아이디에요");
 
 		if (map.get("id").toString().length() > 15) {
@@ -91,8 +90,6 @@ public class JoinAjaxController {
 			json.put("checkDuplicate", map.get("passwordCheck"));
 		}
 
-		System.out.println("기존비밀번호 : " + map.get("password"));
-		System.out.println("확인비밀번호 : " + map.get("passwordCheck"));
 
 		return json.toJSONString();
 	}///////////// 비밀번호 유효성검사 컨트롤러
@@ -133,6 +130,8 @@ public class JoinAjaxController {
 	public String ajaxAge(@RequestParam Map map) {
 		// 1]서비스 호출
 		JSONObject json = new JSONObject();
+		
+
 		
 		boolean isNum=true;
 		for(int i=0; i<map.get("age").toString().length(); i++) {

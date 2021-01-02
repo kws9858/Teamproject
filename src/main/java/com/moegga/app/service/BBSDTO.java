@@ -19,5 +19,5 @@ String id;
 String division;
 String subCategoryNO;
 Date bbsPostdate;
-
 }
+
