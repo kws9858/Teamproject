@@ -56,7 +56,7 @@
 
 
 
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/leesunyoung/14.jpg');" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/leesunyoung/6.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
