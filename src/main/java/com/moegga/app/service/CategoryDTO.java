@@ -15,5 +15,6 @@ String categoryno;
 String maincategory;
 String subcategory;
 
+///카테고리
 }
 
